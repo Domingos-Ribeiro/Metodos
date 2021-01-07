@@ -39,6 +39,14 @@ namespace ProjetoCLR {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::TextBox^ txtVerificaPar;
 	private: System::Windows::Forms::ListBox^ lstboxVerificaPar;
+	private: System::Windows::Forms::GroupBox^ groupBox1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::TextBox^ txtNumeroGerado;
+
+	private: System::Windows::Forms::TextBox^ txtNome;
+	private: System::Windows::Forms::ListBox^ listBox1;
+	private: System::Windows::Forms::Button^ btnGerarNumero;
 	protected:
 
 	private:
@@ -59,6 +67,14 @@ namespace ProjetoCLR {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->txtVerificaPar = (gcnew System::Windows::Forms::TextBox());
 			this->lstboxVerificaPar = (gcnew System::Windows::Forms::ListBox());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->txtNumeroGerado = (gcnew System::Windows::Forms::TextBox());
+			this->txtNome = (gcnew System::Windows::Forms::TextBox());
+			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
+			this->btnGerarNumero = (gcnew System::Windows::Forms::Button());
+			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -106,19 +122,92 @@ namespace ProjetoCLR {
 			this->lstboxVerificaPar->Size = System::Drawing::Size(146, 95);
 			this->lstboxVerificaPar->TabIndex = 4;
 			// 
+			// groupBox1
+			// 
+			this->groupBox1->Controls->Add(this->label2);
+			this->groupBox1->Controls->Add(this->label1);
+			this->groupBox1->Controls->Add(this->txtNumeroGerado);
+			this->groupBox1->Controls->Add(this->txtNome);
+			this->groupBox1->Controls->Add(this->listBox1);
+			this->groupBox1->Controls->Add(this->btnGerarNumero);
+			this->groupBox1->Location = System::Drawing::Point(256, 74);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Size = System::Drawing::Size(299, 228);
+			this->groupBox1->TabIndex = 5;
+			this->groupBox1->TabStop = false;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(31, 165);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(82, 13);
+			this->label2->TabIndex = 5;
+			this->label2->Text = L"Número Gerado";
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(155, 165);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(113, 13);
+			this->label1->TabIndex = 4;
+			this->label1->Text = L"Nome Correspondente";
+			// 
+			// txtNumeroGerado
+			// 
+			this->txtNumeroGerado->ForeColor = System::Drawing::Color::ForestGreen;
+			this->txtNumeroGerado->Location = System::Drawing::Point(23, 179);
+			this->txtNumeroGerado->Name = L"txtNumeroGerado";
+			this->txtNumeroGerado->Size = System::Drawing::Size(98, 20);
+			this->txtNumeroGerado->TabIndex = 3;
+			this->txtNumeroGerado->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// txtNome
+			// 
+			this->txtNome->Location = System::Drawing::Point(151, 179);
+			this->txtNome->Name = L"txtNome";
+			this->txtNome->Size = System::Drawing::Size(120, 20);
+			this->txtNome->TabIndex = 2;
+			this->txtNome->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// listBox1
+			// 
+			this->listBox1->FormattingEnabled = true;
+			this->listBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Ana", L"Rui", L"Abel" });
+			this->listBox1->Location = System::Drawing::Point(151, 39);
+			this->listBox1->Name = L"listBox1";
+			this->listBox1->Size = System::Drawing::Size(120, 108);
+			this->listBox1->TabIndex = 1;
+			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Form1::listBox1_SelectedIndexChanged);
+			// 
+			// btnGerarNumero
+			// 
+			this->btnGerarNumero->Location = System::Drawing::Point(23, 39);
+			this->btnGerarNumero->Name = L"btnGerarNumero";
+			this->btnGerarNumero->Size = System::Drawing::Size(98, 47);
+			this->btnGerarNumero->TabIndex = 0;
+			this->btnGerarNumero->Text = L"Gerar Numero";
+			this->btnGerarNumero->UseVisualStyleBackColor = true;
+			this->btnGerarNumero->Click += gcnew System::EventHandler(this, &Form1::btnGerarNumero_Click);
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(735, 575);
+			this->ClientSize = System::Drawing::Size(577, 575);
+			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->lstboxVerificaPar);
 			this->Controls->Add(this->txtVerificaPar);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Name = L"Form1";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Form1";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
+			this->groupBox1->ResumeLayout(false);
+			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -181,6 +270,32 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	//Limpa a caixa de texto
 	txtVerificaPar->Text = "";
+}
+private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) 
+{
+
+}
+private: System::Void btnGerarNumero_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	//Gera um número aleatório
+	Random^ aleatorio = gcnew Random();
+
+	//Criação da variável "numero"
+	int numero;
+
+	//O número gerado aliatóriamente (entre 0 e 3)é atribuido à variável "numero"
+	//Tendo noção que o número 3 nunca será gerado, só o 0, 1 e o 2
+	numero = aleatorio->Next(0, 3);
+
+	//O número gerado passa para a textBox apropriada
+	//Sendo que a listBox começa com o número zero, acrecentamos mais um, 
+	//ou seja, se for gerado o zero será apresentada a primeira posição
+	//Da mesma forma, quando for gerado o n.º 2, será apresentado o n.º 3
+	txtNumeroGerado->Text = (numero + 1).ToString();
+
+	//A textBox Nome recebe a posição gerada sem o incremento,
+	//Seguindo o último exemplo, a posição 2 corresponde ao último nome, neste caso, o Abel
+	txtNome->Text = listBox1->Items[numero]->ToString();
 }
 };
 }
