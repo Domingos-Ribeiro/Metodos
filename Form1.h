@@ -284,17 +284,17 @@ private: System::Void btnGerarNumero_Click(System::Object^ sender, System::Event
 	int numero;
 
 	//O número gerado aliatóriamente (entre 0 e 3)é atribuido à variável "numero"
-	//Tendo noção que o número 3 nunca será gerado, só o 0, 1 e o 2
+	//Tendo noção que o número 3 nunca será gerado, só o zero, o um e o dois
 	numero = aleatorio->Next(0, 3);
 
 	//O número gerado passa para a textBox apropriada
 	//Sendo que a listBox começa com o número zero, acrecentamos mais um, 
-	//ou seja, se for gerado o zero será apresentada a primeira posição
-	//Da mesma forma, quando for gerado o n.º 2, será apresentado o n.º 3
+	//ou seja, se for gerado o zero será apresentado o número um,
+	//Da mesma forma, quando for gerado o n.º 2, será apresentado o n.º 3 para corresponder à terceira posição.
 	txtNumeroGerado->Text = (numero + 1).ToString();
 
-	//A textBox Nome recebe a posição gerada sem o incremento,
-	//Seguindo o último exemplo, a posição 2 corresponde ao último nome, neste caso, o Abel
+	//A textBox Nome recebe a posição gerada exata, ou seja, SEM o incremento,
+	//Seguindo o último exemplo, a posição 2 corresponde ao último nome, neste caso, o Abel (0,1,2)
 	txtNome->Text = listBox1->Items[numero]->ToString();
 }
 };
