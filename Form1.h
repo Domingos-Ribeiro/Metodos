@@ -283,8 +283,8 @@ private: System::Void btnGerarNumero_Click(System::Object^ sender, System::Event
 	//Criação da variável "numero"
 	int numero;
 
-	//O número gerado aliatóriamente (entre 0 e 3)é atribuido à variável "numero"
-	//Tendo noção que o número 3 nunca será gerado, só o zero, o um e o dois
+	//O número gerado aliatóriamente (entre 0 e 3) é atribuido à variável "numero"
+	//Tendo noção que o número 3 nunca será gerado, só o zero, o um e o dois.
 	numero = aleatorio->Next(0, 3);
 
 	//O número gerado passa para a textBox apropriada
