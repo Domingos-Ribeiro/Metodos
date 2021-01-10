@@ -241,7 +241,8 @@ namespace ProjetoCLR {
 
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		//Poderá ser deste modo
+		//Funcionará também usando as próximas 3 linhas:
+
 		//int n;
 		//n = GerarRand(0,20);
 		//MessageBox::Show(n.ToString());
