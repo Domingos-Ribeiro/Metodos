@@ -241,11 +241,11 @@ namespace ProjetoCLR {
 
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		//Funcionará também usando as próximas 3 linhas:
+		//Funcionará também usando as próximas 3 linhas, chamando a função criada: GerarRand
 
-		//int n;
-		//n = GerarRand(0,20);
-		//MessageBox::Show(n.ToString());
+			//int n;
+			//n = GerarRand(0,20);
+			//MessageBox::Show(n.ToString());
 
 		MessageBox::Show(GerarRand(0, 20).ToString());
 	}
